@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REPLAY — Perfil de usuario</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">♦</span>
+      <span class="brand-name">REPLAY</span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="buscar.html">Buscar</a>
+      <a href="carrito.html">Compras</a>
+      <a href="nosotros.html">Nosotros</a>
+    </nav>
+    <div class="header-actions">
+      <a href="carrito.html" class="icon-link" aria-label="Carrito">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+        <span class="badge">3</span>
+      </a>
+      <a href="perfil.html" class="icon-link avatar-link" aria-label="Perfil">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.8-4 5-6 8-6s6.2 2 8 6"/></svg>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="spool-stripe"><span></span><span></span><span></span><span></span></div>
+</header>
+
+<main class="page">
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>INFORMACIÓN DEL USUARIO</h1>
+      <p class="lede">Gestiona tus datos, métodos de pago y compras anteriores.</p>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="layout-2col">
+
+      <div>
+        <div class="field-grid">
+          <div class="field"><label>Nombre</label><input type="text" value="Ana Sofía Muñoz"></div>
+          <div class="field"><label>Teléfono</label><input type="text" value="+57 300 123 4567"></div>
+          <div class="field"><label>Nombre de usuario</label><input type="text" value="ana.replay"></div>
+          <div class="field">
+            <label>Método de pago</label>
+            <div class="static" style="display:flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:12px;font-weight:700;">
+              VISA
+              <span style="display:inline-flex;">
+                <span style="width:14px;height:14px;border-radius:50%;background:var(--clay);display:inline-block;"></span>
+                <span style="width:14px;height:14px;border-radius:50%;background:var(--mustard);display:inline-block;margin-left:-6px;"></span>
+              </span>
+            </div>
+          </div>
+          <div class="field" style="grid-column:1 / -1;"><label>Correo electrónico</label><input type="email" value="ana.munoz@correo.com"></div>
+        </div>
+
+        <p class="block-title">Compras anteriores</p>
+        <div class="mini-cards">
+          <div class="mini-card">
+            <div class="art" style="background:linear-gradient(160deg,#4C8B84,#241C13)"></div>
+            <p class="name">RUMOURS</p>
+            <p class="price">$75.000</p>
+          </div>
+          <div class="mini-card">
+            <div class="art" style="background:linear-gradient(160deg,#DDA53A,#241C13)"></div>
+            <p class="name">CREEP</p>
+            <p class="price">$89.000</p>
+          </div>
+          <a href="historial.html" class="mini-card more" aria-label="Ver más">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <aside>
+        <div class="profile-card">
+          <div class="profile-photo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" style="width:48px;height:48px;"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.8-4 5-6 8-6s6.2 2 8 6"/></svg>
+            <span class="cam">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" style="width:16px;height:16px;"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3"/></svg>
+            </span>
+          </div>
+          <h2>Ana Sofía Muñoz</h2>
+          <p class="role">MIEMBRO DESDE 2023</p>
+        </div>
+
+        <a href="configuracion.html" class="pill-btn solid" style="margin-top:20px;">Ver más ajustes</a>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="brand-name" style="font-size:18px;">REPLAY</p>
+      <p class="tagline">♦ Vinilos y cassettes ♦</p>
+    </div>
+    <nav class="footer-links">
+      <a href="nosotros.html">Nosotros</a>
+      <a href="configuracion.html">Configuración</a>
+      <a href="metodos-pago.html">Métodos de pago</a>
+    </nav>
+    <p class="copyright">© 2026 REPLAY — Hecho para melómanos.</p>
+  </div>
+</footer>
+
+<script src="../javaScript/main.js"></script>
+</body>
+</html>

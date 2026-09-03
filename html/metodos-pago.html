@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REPLAY — Métodos de pago</title>
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">♦</span>
+      <span class="brand-name">REPLAY</span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="buscar.html">Buscar</a>
+      <a href="carrito.html">Compras</a>
+      <a href="nosotros.html">Nosotros</a>
+    </nav>
+    <div class="header-actions">
+      <a href="carrito.html" class="icon-link" aria-label="Carrito">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+        <span class="badge">3</span>
+      </a>
+      <a href="perfil.html" class="icon-link avatar-link" aria-label="Perfil">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.8-4 5-6 8-6s6.2 2 8 6"/></svg>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="spool-stripe"><span></span><span></span><span></span><span></span></div>
+</header>
+
+<main class="page">
+
+  <section class="page-hero">
+    <div class="container">
+      <a href="carrito.html" class="back-link">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M15 6l-6 6 6 6"/></svg>
+        Volver al carrito
+      </a>
+      <h1>MÉTODOS DE PAGO</h1>
+      <p class="lede">Agrega o actualiza tu tarjeta para finalizar la compra.</p>
+    </div>
+  </section>
+
+  <section class="section container" style="max-width:640px;">
+    <div class="form-card">
+      <div style="text-align:center;color:var(--ink-soft);margin-bottom:16px;">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:32px;height:32px;"><path d="M9 18V6l10 6-10 6z"/></svg>
+      </div>
+
+      <div class="field">
+        <label for="tarjeta">Número de tarjeta</label>
+        <input id="tarjeta" type="text" placeholder="•••• •••• •••• ••••">
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="venc">Fecha de vencimiento</label>
+          <input id="venc" type="text" placeholder="MM / AA">
+        </div>
+        <div class="field">
+          <label for="cvv">Código de seguridad</label>
+          <input id="cvv" type="text" placeholder="CVV">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="titular">Nombre del titular</label>
+        <input id="titular" type="text">
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="doc">Documento de identidad</label>
+          <input id="doc" type="text">
+        </div>
+        <div class="field">
+          <label for="tel">Número de teléfono</label>
+          <input id="tel" type="tel">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="dir">Dirección</label>
+        <input id="dir" type="text">
+      </div>
+
+      <div class="field">
+        <label for="correo">Correo electrónico</label>
+        <input id="correo" type="email">
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-outline">Agregar método</button>
+        <button class="btn-solid">Continuar</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="brand-name" style="font-size:18px;">REPLAY</p>
+      <p class="tagline">♦ Vinilos y cassettes ♦</p>
+    </div>
+    <nav class="footer-links">
+      <a href="nosotros.html">Nosotros</a>
+      <a href="configuracion.html">Configuración</a>
+      <a href="metodos-pago.html">Métodos de pago</a>
+    </nav>
+    <p class="copyright">© 2026 REPLAY — Hecho para melómanos.</p>
+  </div>
+</footer>
+
+<script src="../javaScript/main.js"></script>
+</body>
+</html>
