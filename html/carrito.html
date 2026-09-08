@@ -1,152 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>REPLAY — Compra de productos</title>
-<link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REPLAY — Compra de productos</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="brand">
-      <span class="brand-mark">♦</span>
-      <span class="brand-name">REPLAY</span>
-    </a>
-    <nav class="main-nav" id="main-nav">
-      <a href="index.html">Inicio</a>
-      <a href="productos.html">Productos</a>
-      <a href="buscar.html">Buscar</a>
-      <a href="carrito.html" class="active">Compras</a>
-      <a href="nosotros.html">Nosotros</a>
-    </nav>
-    <div class="header-actions">
-      <a href="carrito.html" class="icon-link" aria-label="Carrito">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L21 7H6"/></svg>
-        <span class="badge">3</span>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">♦</span>
+        <span class="brand-name">REPLAY</span>
       </a>
-      <a href="perfil.html" class="icon-link avatar-link" aria-label="Perfil">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.8-4 5-6 8-6s6.2 2 8 6"/></svg>
-      </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-  <div class="spool-stripe"><span></span><span></span><span></span><span></span></div>
-</header>
-
-<main class="page">
-
-  <section class="page-hero">
-    <div class="container">
-      <h1>COMPRA DE PRODUCTOS</h1>
-      <p class="lede">Revisa tu carrito antes de finalizar la compra.</p>
-    </div>
-  </section>
-
-  <section class="section container">
-    <div class="layout-2col">
-
-      <div>
-        <div class="line-item">
-          <div class="thumb" style="background:linear-gradient(160deg,#4C8B84,#241C13)"></div>
-          <div class="info">
-            <p class="name">NEVERMIND</p>
-            <p class="artist">Nirvana · 1991</p>
-          </div>
-          <div class="price-col">
-            <span class="price">COP $85.000</span>
-            <div class="qty-stepper">
-              <button class="step">+</button>
-              <span class="n">2 UND</span>
-              <button class="step">–</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="line-item">
-          <div class="thumb" style="background:linear-gradient(160deg,#B24B3C,#241C13)"></div>
-          <div class="info">
-            <p class="name">CURRENTS</p>
-            <p class="artist">Tame Impala · 2015</p>
-          </div>
-          <div class="price-col">
-            <span class="price">COP $91.000</span>
-            <div class="qty-stepper">
-              <button class="step">+</button>
-              <span class="n">1 UND</span>
-              <button class="step">–</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="line-item">
-          <div class="thumb" style="background:linear-gradient(160deg,#DDA53A,#241C13)"></div>
-          <div class="info">
-            <p class="name">DANGEROUS</p>
-            <p class="artist">Michael J. · 1991</p>
-          </div>
-          <div class="price-col">
-            <span class="price">COP $89.000</span>
-            <div class="qty-stepper">
-              <button class="step">+</button>
-              <span class="n">1 UND</span>
-              <button class="step">–</button>
-            </div>
-          </div>
-        </div>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="buscar.html">Buscar</a>
+        <a href="carrito.html" class="active">Compras</a>
+        <a href="nosotros.html">Nosotros</a>
+      </nav>
+      <div class="header-actions">
+        <a href="carrito.html" class="icon-link" aria-label="Carrito">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1" />
+            <circle cx="19" cy="21" r="1" />
+            <path d="M2 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L21 7H6" />
+          </svg>
+          <span class="badge">3</span>
+        </a>
+        <a href="perfil.html" class="icon-link avatar-link" aria-label="Perfil">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c1.8-4 5-6 8-6s6.2 2 8 6" />
+          </svg>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </div>
+    <div class="spool-stripe"><span></span><span></span><span></span><span></span></div>
+  </header>
 
-      <aside class="panel sticky">
-        <h2>Resumen</h2>
-        <div class="summary-row"><span>Subtotal</span><span>COP $350.000</span></div>
-        <div class="summary-row"><span>Envío</span><span>COP $12.000</span></div>
-        <div class="summary-row total"><span>Total</span><span>COP $362.000</span></div>
+  <main class="page">
 
-        <div class="action-list" style="margin-top:20px;">
-          <button class="action-row">
-            <span class="glyph">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
-            </span>
-            Agregar producto
-          </button>
-          <button class="action-row">
-            <span class="glyph">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>
-            </span>
-            Eliminar producto
-          </button>
-          <a href="metodos-pago.html" class="action-row primary">
-            <span class="glyph">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L21 7H6"/></svg>
-            </span>
-            Finalizar compra
-          </a>
+    <section class="page-hero">
+      <div class="container">
+        <h1>COMPRA DE PRODUCTOS</h1>
+        <p class="lede">Revisa tu carrito antes de finalizar la compra.</p>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="layout-2col">
+
+        <div id="carrito-items">
+          <p>Cargando carrito...</p>
+          <div class="line-item">
+            <div class="thumb" style="background:linear-gradient(160deg,#4C8B84,#241C13)"></div>
+            <div class="info">
+              <p class="name">NEVERMIND</p>
+              <p class="artist">Nirvana · 1991</p>
+            </div>
+            <div class="price-col">
+              <span class="price">COP $85.000</span>
+              <div class="qty-stepper">
+                <button class="step">+</button>
+                <span class="n">2 UND</span>
+                <button class="step">–</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="line-item">
+            <div class="thumb" style="background:linear-gradient(160deg,#B24B3C,#241C13)"></div>
+            <div class="info">
+              <p class="name">CURRENTS</p>
+              <p class="artist">Tame Impala · 2015</p>
+            </div>
+            <div class="price-col">
+              <span class="price">COP $91.000</span>
+              <div class="qty-stepper">
+                <button class="step">+</button>
+                <span class="n">1 UND</span>
+                <button class="step">–</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="line-item">
+            <div class="thumb" style="background:linear-gradient(160deg,#DDA53A,#241C13)"></div>
+            <div class="info">
+              <p class="name">DANGEROUS</p>
+              <p class="artist">Michael J. · 1991</p>
+            </div>
+            <div class="price-col">
+              <span class="price">COP $89.000</span>
+              <div class="qty-stepper">
+                <button class="step">+</button>
+                <span class="n">1 UND</span>
+                <button class="step">–</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </aside>
 
+        <aside class="panel sticky">
+          <h2>Resumen</h2>
+          <div class="summary-row"><span>Subtotal</span><span id="resumen-subtotal">COP $0</span></div>
+          <div class="summary-row"><span>Envío</span><span id="resumen-envio">COP $0</span></div>
+          <div class="summary-row total"><span>Total</span><span id="resumen-total">COP $0</span></div>
+
+          <div class="action-list" style="margin-top:20px;">
+            <button class="action-row">
+              <span class="glyph">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 8v8M8 12h8" />
+                </svg>
+              </span>
+              Agregar producto
+            </button>
+            <button class="action-row">
+              <span class="glyph">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M8 12h8" />
+                </svg>
+              </span>
+              Eliminar producto
+            </button>
+            <a href="metodos-pago.html" class="action-row primary">
+              <span class="glyph">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="19" cy="21" r="1" />
+                  <path d="M2 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L21 7H6" />
+                </svg>
+              </span>
+              Finalizar compra
+            </a>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="brand-name" style="font-size:18px;">REPLAY</p>
+        <p class="tagline">♦ Vinilos y cassettes ♦</p>
+      </div>
+      <nav class="footer-links">
+        <a href="nosotros.html">Nosotros</a>
+        <a href="configuracion.html">Configuración</a>
+        <a href="metodos-pago.html">Métodos de pago</a>
+      </nav>
+      <p class="copyright">© 2026 REPLAY — Hecho para melómanos.</p>
     </div>
-  </section>
+  </footer>
 
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <p class="brand-name" style="font-size:18px;">REPLAY</p>
-      <p class="tagline">♦ Vinilos y cassettes ♦</p>
-    </div>
-    <nav class="footer-links">
-      <a href="nosotros.html">Nosotros</a>
-      <a href="configuracion.html">Configuración</a>
-      <a href="metodos-pago.html">Métodos de pago</a>
-    </nav>
-    <p class="copyright">© 2026 REPLAY — Hecho para melómanos.</p>
-  </div>
-</footer>
-
-<script src="../javaScript/main.js"></script>
+  <script src="../javaScript/carrito.js"></script>
 </body>
+
 </html>
