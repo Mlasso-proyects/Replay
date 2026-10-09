@@ -2,7 +2,7 @@
 
 Tienda web de vinilos y cassettes hecha con **React** y **Vite**. El catálogo, la búsqueda y el detalle de cada disco se obtienen en tiempo real desde la API de [Discogs](https://www.discogs.com/developers).
 
-**Demo:** _(pega aquí la URL de Vercel cuando despliegues, en el Paso 9)_
+**Demo:** _https://replay-silk.vercel.app/_
 
 ## Funcionalidades
 
