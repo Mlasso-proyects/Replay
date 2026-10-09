@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useCart } from "../context/CartContext.jsx";
-
-const TOKEN_DISCOGS = "YPVKoYeIGXXpUohUUaIcKDBDbZMQilXuFPkbqoyt";
-const USER_AGENT = "ReplayTiendaVinilos/1.0";
+import { obtenerRelease } from "../services/discogs.js";
+import { calcularPrecioTienda } from "../utils/formato.js";
 
 function ProductoDetalle() {
   const { id } = useParams();
@@ -15,13 +14,7 @@ function ProductoDetalle() {
   useEffect(() => {
     let activo = true;
     setEstado("cargando");
-    fetch(`https://api.discogs.com/releases/${id}?token=${TOKEN_DISCOGS}`, {
-      headers: { "User-Agent": USER_AGENT },
-    })
-      .then((res) => {
-        if (!res.ok) throw new Error("No se encontró ese producto en Discogs");
-        return res.json();
-      })
+    obtenerRelease(id)
       .then((datos) => {
         if (!activo) return;
         setRelease(datos);
@@ -52,7 +45,7 @@ function ProductoDetalle() {
     release.formats?.length > 0
       ? release.formats[0].name
       : "Formato desconocido";
-  const precio = 60000 + (release.id % 40) * 1000;
+  const precio = calcularPrecioTienda(release.id);
 
   function alAgregar() {
     agregar({

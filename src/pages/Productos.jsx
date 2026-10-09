@@ -1,4 +1,5 @@
 import FilaProductos from "../components/FilaProductos.jsx";
+import FormularioDisco from "../components/FormularioDisco.jsx";
 
 function Productos() {
   return (
@@ -11,6 +12,8 @@ function Productos() {
           Cassettes
         </p>
         <FilaProductos formato="Cassette" />
+
+        <FormularioDisco />
       </section>
     </main>
   );

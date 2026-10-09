@@ -2,13 +2,11 @@ import { useEffect, useMemo, useState } from "react";
 import FilaResultado from "../components/FilaResultado.jsx";
 import { useCatalogoDiscogs } from "../hooks/useCatalogoDiscogs.js";
 import { useCart } from "../context/CartContext.jsx";
+import { buscarReleases } from "../services/discogs.js";
 import {
   separarArtistaYAlbum,
   calcularPrecioTienda,
 } from "../utils/formato.js";
-
-const TOKEN_DISCOGS = "YPVKoYeIGXXpUohUUaIcKDBDbZMQilXuFPkbqoyt";
-const USER_AGENT = "ReplayTiendaVinilos/1.0";
 
 function itemsFormateados(items) {
   return items.map((item) => {
@@ -55,16 +53,7 @@ function Buscar() {
     setBuscando(true);
     setError(false);
     const temporizador = setTimeout(() => {
-      fetch(
-        `https://api.discogs.com/database/search?q=${encodeURIComponent(texto)}&type=release&per_page=10&token=${TOKEN_DISCOGS}`,
-        {
-          headers: { "User-Agent": USER_AGENT },
-        },
-      )
-        .then((res) => {
-          if (!res.ok) throw new Error();
-          return res.json();
-        })
+      buscarReleases(texto)
         .then((datos) => setResultados(datos.results))
         .catch(() => setError(true))
         .finally(() => setBuscando(false));
