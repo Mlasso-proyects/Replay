@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+// Pie de página común a todas las páginas, con enlaces secundarios.
 function Footer() {
   return (
     <footer className="site-footer">

@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext.jsx";
 import { useState } from "react";
 
+// Fila de un producto en la página Buscar (resultados, recomendados y más comprados).
+// Recibe un "item" ya formateado (titulo, artista, anio, precio, imagen...).
 function FilaResultado({ item }) {
   const { agregar } = useCart();
+  // Cambia el "+" por "✓" un momento después de agregar al carrito.
   const [agregado, setAgregado] = useState(false);
 
   function alAgregar() {
@@ -19,6 +22,7 @@ function FilaResultado({ item }) {
     setTimeout(() => setAgregado(false), 1200);
   }
 
+  // Si hay portada se usa como fondo; si no, se muestra un degradado de color.
   const estiloThumb = item.imagen
     ? {
         backgroundImage: `url('${item.imagen}')`,

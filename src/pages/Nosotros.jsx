@@ -1,3 +1,4 @@
+// Página informativa con la misión y la visión de la tienda.
 function Nosotros() {
   return (
     <main className="page">

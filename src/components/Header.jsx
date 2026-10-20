@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext.jsx";
 import { useAuth } from "../context/AuthContext.jsx";
 
+// Encabezado fijo del sitio: logo, navegación, carrito y acceso al perfil.
 function Header() {
   const { totalUnidades } = useCart();
   const { usuario } = useAuth();
+  // Controla el menú hamburguesa en pantallas pequeñas.
   const [menuAbierto, setMenuAbierto] = useState(false);
 
   return (
@@ -16,6 +18,7 @@ function Header() {
           <span className="brand-name">REPLAY</span>
         </Link>
 
+        {/* La clase "open" despliega el menú en móvil; cada enlace lo cierra al navegar */}
         <nav className={`main-nav ${menuAbierto ? "open" : ""}`}>
           <Link to="/" onClick={() => setMenuAbierto(false)}>
             Inicio
@@ -49,6 +52,7 @@ function Header() {
             </svg>
             <span className="badge">{totalUnidades}</span>
           </Link>
+          {/* Con sesión iniciada lleva al perfil; sin sesión, al login */}
           <Link
             to={usuario ? "/perfil" : "/login"}
             className="icon-link avatar-link"

@@ -4,12 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext.jsx";
 import { estiloThumb } from "../utils/formato.js";
 
+// Página de perfil: datos del usuario, últimas compras y cierre de sesión.
 function Perfil() {
   const { usuario, cerrarSesion } = useAuth();
   const navigate = useNavigate();
   const { historial } = useCart();
+  // Las 2 últimas compras, de la más reciente a la más antigua.
   const comprasRecientes = historial.slice(-2).reverse();
 
+  // Cierra la sesión y lleva al login.
   function alCerrarSesion() {
     cerrarSesion();
     navigate("/login");
@@ -28,6 +31,9 @@ function Perfil() {
       <section className="section container">
         <div className="layout-2col">
           <div>
+            {/* defaultValue: los campos se rellenan con los datos del usuario
+                pero se pueden editar (los cambios todavía no se guardan).
+                usuario?. evita errores cuando no hay sesión iniciada. */}
             <div className="field-grid">
               <div className="field">
                 <label>Nombre</label>

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+// Página de configuración. Por ahora es solo visual: los enlaces con href="#"
+// todavía no llevan a ninguna parte y los datos del panel son de ejemplo.
 function Configuracion() {
   return (
     <main className="page">

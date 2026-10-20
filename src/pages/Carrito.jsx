@@ -5,14 +5,18 @@ function formatearPrecio(valor) {
   return `COP $${valor.toLocaleString("es-CO")}`;
 }
 
+// Página del carrito: lista los productos, permite cambiar cantidades
+// y muestra el resumen con subtotal, envío y total.
 function Carrito() {
   const { carrito, cambiarCantidad } = useCart();
   const navigate = useNavigate();
 
+  // Suma precio × cantidad de cada producto.
   const subtotal = carrito.reduce(
     (suma, item) => suma + item.precio * item.cantidad,
     0,
   );
+  // Envío fijo de 12.000 COP, solo si hay algo en el carrito.
   const envio = carrito.length > 0 ? 12000 : 0;
   const total = subtotal + envio;
 
@@ -53,6 +57,7 @@ function Carrito() {
                     <span className="price">
                       {formatearPrecio(item.precio * item.cantidad)}
                     </span>
+                    {/* Al bajar de 1 unidad el producto sale del carrito */}
                     <div className="qty-stepper">
                       <button
                         className="step"

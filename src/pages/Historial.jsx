@@ -5,6 +5,7 @@ function formatearPrecio(valor) {
   return `COP $${valor.toLocaleString("es-CO")}`;
 }
 
+// Página con todas las compras finalizadas (guardadas en CartContext).
 function Historial() {
   const { historial } = useCart();
 
@@ -35,6 +36,8 @@ function Historial() {
           {historial.length === 0 ? (
             <p>Aún no has realizado ninguna compra.</p>
           ) : (
+            // El mismo disco puede aparecer en varias compras, por eso la key
+            // combina el id con la posición para que sea única.
             historial.map((item, index) => (
               <div className="line-item" key={`${item.id}-${index}`}>
                 <div

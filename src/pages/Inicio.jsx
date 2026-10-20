@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import FilaProductos from "../components/FilaProductos.jsx";
 
+// Página principal: presentación de la tienda y una fila de vinilos y otra de cassettes.
 function Inicio() {
   return (
     <main className="page">

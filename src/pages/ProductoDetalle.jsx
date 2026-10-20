@@ -4,6 +4,8 @@ import { useCart } from "../context/CartContext.jsx";
 import { obtenerRelease } from "../services/discogs.js";
 import { calcularPrecioTienda } from "../utils/formato.js";
 
+// Página de detalle de un producto. Toma el id de la URL (/producto/:id)
+// y consulta la información completa en Discogs.
 function ProductoDetalle() {
   const { id } = useParams();
   const { agregar } = useCart();
@@ -11,7 +13,9 @@ function ProductoDetalle() {
   const [estado, setEstado] = useState("cargando"); // 'cargando' | 'listo' | 'error'
   const [agregado, setAgregado] = useState(false);
 
+  // Se vuelve a cargar cada vez que cambia el id en la URL.
   useEffect(() => {
+    // "activo" evita guardar la respuesta si el usuario ya cambió de página.
     let activo = true;
     setEstado("cargando");
     obtenerRelease(id)
@@ -39,6 +43,8 @@ function ProductoDetalle() {
       </section>
     );
 
+  // Datos derivados del release; ?. y los valores por defecto cubren
+  // lanzamientos que no traen imágenes o formatos.
   const artistas = release.artists.map((a) => a.name).join(", ");
   const imagen = release.images?.length > 0 ? release.images[0].uri : "";
   const formato =
