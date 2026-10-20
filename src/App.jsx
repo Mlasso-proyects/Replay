@@ -12,6 +12,8 @@ import Perfil from "./pages/Perfil.jsx";
 import Nosotros from "./pages/Nosotros.jsx";
 import Configuracion from "./pages/Configuracion.jsx";
 import Login from "./pages/Login.jsx";
+// Temas 3 y 4: página de práctica (formulario controlado y consumo de API).
+import Practica from "./pages/Practica.jsx";
 
 // Componente raíz: define las rutas de la tienda.
 // Header y Footer quedan fuera de <Routes> para mostrarse en todas las páginas.
@@ -32,6 +34,7 @@ function App() {
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/configuracion" element={<Configuracion />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/practica" element={<Practica />} />
       </Routes>
       <Footer />
     </BrowserRouter>
