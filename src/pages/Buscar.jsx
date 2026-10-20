@@ -8,6 +8,7 @@ import {
   calcularPrecioTienda,
 } from "../utils/formato.js";
 
+// Convierte los resultados crudos de Discogs al formato que espera FilaResultado.
 function itemsFormateados(items) {
   return items.map((item) => {
     const { artista, album } = separarArtistaYAlbum(item.title);
@@ -23,8 +24,11 @@ function itemsFormateados(items) {
   });
 }
 
+// Página de búsqueda: sin texto muestra recomendados y más comprados;
+// con texto consulta Discogs y lista los resultados.
 function Buscar() {
   const [texto, setTexto] = useState("");
+  // null = todavía no se ha buscado nada (distinto de [] = búsqueda sin resultados).
   const [resultados, setResultados] = useState(null);
   const [buscando, setBuscando] = useState(false);
   const [error, setError] = useState(false);
@@ -34,7 +38,9 @@ function Buscar() {
 
   // Más comprados reales: se calculan a partir de TU historial de compras
   const { historial } = useCart();
+  // useMemo evita recalcular el ranking en cada render; solo cuando cambia el historial.
   const masComprados = useMemo(() => {
+    // Agrupa las compras por id y suma cuántas unidades se compraron de cada disco.
     const conteo = {};
     historial.forEach((item) => {
       if (!conteo[item.id]) conteo[item.id] = { ...item, vecesComprado: 0 };
@@ -45,7 +51,10 @@ function Buscar() {
       .slice(0, 5);
   }, [historial]);
 
+  // Búsqueda con "debounce": espera 400 ms desde la última tecla antes de
+  // llamar a la API, para no hacer una petición por cada letra escrita.
   useEffect(() => {
+    // Si el campo queda vacío se vuelve a la vista inicial.
     if (texto.trim().length === 0) {
       setResultados(null);
       return;
@@ -59,6 +68,7 @@ function Buscar() {
         .finally(() => setBuscando(false));
     }, 400);
 
+    // Si el usuario sigue escribiendo, se cancela el temporizador anterior.
     return () => clearTimeout(temporizador);
   }, [texto]);
 
@@ -93,6 +103,7 @@ function Buscar() {
           />
         </div>
 
+        {/* Orden de los casos: sin búsqueda → buscando → error → sin resultados → resultados */}
         <div id="resultados-container">
           {resultados === null ? (
             <>

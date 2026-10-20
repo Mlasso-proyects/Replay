@@ -1,18 +1,24 @@
 import { useState } from "react";
 import { useCart } from "../context/CartContext.jsx";
 
+// Formulario para pedir un disco que no está en el catálogo:
+// lo agrega directamente al carrito con los datos que escribe el usuario.
 function FormularioDisco() {
   const { agregar } = useCart();
+  // Inputs controlados: cada campo guarda su valor en el estado.
   const [titulo, setTitulo] = useState("");
   const [artista, setArtista] = useState("");
   const [precio, setPrecio] = useState("");
   const [agregado, setAgregado] = useState(false);
 
   function alEnviar(e) {
+    // Evita que el formulario recargue la página.
     e.preventDefault();
+    // Validación: no se aceptan campos vacíos o solo con espacios.
     if (!titulo.trim() || !artista.trim() || !precio) return;
 
     agregar({
+      // Date.now() sirve como id único porque estos discos no vienen de Discogs.
       id: Date.now(),
       titulo: titulo.trim(),
       artista: artista.trim(),
@@ -21,6 +27,7 @@ function FormularioDisco() {
       imagen: "",
     });
 
+    // Limpia el formulario y muestra la confirmación durante 1,5 segundos.
     setTitulo("");
     setArtista("");
     setPrecio("");

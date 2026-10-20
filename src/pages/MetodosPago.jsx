@@ -1,10 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext.jsx";
 
+// Página de pago. Los campos de tarjeta son solo visuales (no se validan
+// ni se envían); "Continuar" simula el pago y finaliza la compra.
 function MetodosPago() {
   const { finalizarCompra } = useCart();
   const navigate = useNavigate();
 
+  // Mueve el carrito al historial y redirige; avisa si el carrito está vacío.
   function alContinuar(e) {
     e.preventDefault();
     const exito = finalizarCompra();

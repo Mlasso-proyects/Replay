@@ -1,6 +1,7 @@
 import FilaProductos from "../components/FilaProductos.jsx";
 import FormularioDisco from "../components/FormularioDisco.jsx";
 
+// Catálogo completo: filas de vinilos y cassettes, y el formulario para pedir un disco.
 function Productos() {
   return (
     <main className="page">

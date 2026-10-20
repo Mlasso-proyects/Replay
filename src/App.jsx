@@ -13,11 +13,14 @@ import Nosotros from "./pages/Nosotros.jsx";
 import Configuracion from "./pages/Configuracion.jsx";
 import Login from "./pages/Login.jsx";
 
+// Componente raíz: define las rutas de la tienda.
+// Header y Footer quedan fuera de <Routes> para mostrarse en todas las páginas.
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
+        {/* :id es un parámetro dinámico que ProductoDetalle lee con useParams */}
         <Route path="/" element={<Inicio />} />
         <Route path="/productos" element={<Productos />} />
         <Route path="/producto/:id" element={<ProductoDetalle />} />

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 
+// Página de acceso. Un mismo formulario sirve para iniciar sesión o registrarse,
+// según el valor de "modo".
 function Login() {
   const { iniciarSesion, registrar } = useAuth();
   const navigate = useNavigate();
@@ -16,6 +18,7 @@ function Login() {
     e.preventDefault();
     setError("");
 
+    // Ambas funciones devuelven { exito, mensaje }.
     const resultado =
       modo === "ingresar"
         ? iniciarSesion(correo, password)
@@ -43,6 +46,7 @@ function Login() {
 
       <section className="section container" style={{ maxWidth: "480px" }}>
         <form className="form-card" onSubmit={alEnviar}>
+          {/* El nombre solo se pide al crear cuenta */}
           {modo === "registrar" && (
             <div className="field">
               <label htmlFor="nombre">Nombre completo</label>

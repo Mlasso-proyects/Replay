@@ -8,13 +8,18 @@ import {
   formatearPrecio,
 } from "../utils/formato.js";
 
+// Fila horizontal de tarjetas de productos de un formato ("Vinyl", "Cassette").
+// Se desplaza con flechas y carga más productos al llegar cerca del final.
 function FilaProductos({ formato }) {
   const { items, cargando, error, cargarSiguientePagina } =
     useCatalogoDiscogs(formato);
   const { agregar } = useCart();
+  // Referencia al contenedor con scroll para poder moverlo y medirlo.
   const contenedorRef = useRef(null);
+  // Id del producto recién agregado, para mostrar "Agregado ✓" un momento.
   const [agregadoId, setAgregadoId] = useState(null);
 
+  // Desplaza la fila 300px a la izquierda (-1) o a la derecha (1).
   function moverScroll(direccion) {
     contenedorRef.current?.scrollBy({
       left: direccion * 300,
@@ -22,9 +27,11 @@ function FilaProductos({ formato }) {
     });
   }
 
+  // Scroll infinito: si faltan menos de 300px para el final, pide la siguiente página.
   function alHacerScroll() {
     const el = contenedorRef.current;
     if (!el) return;
+    // scrollLeft + clientWidth = hasta dónde se ve; scrollWidth = ancho total.
     const cercaDelFinal =
       el.scrollLeft + el.clientWidth >= el.scrollWidth - 300;
     if (cercaDelFinal) cargarSiguientePagina();
@@ -39,6 +46,7 @@ function FilaProductos({ formato }) {
       precio: precioNumero,
       imagen,
     });
+    // Muestra la confirmación y la quita a los 1,2 segundos.
     setAgregadoId(item.id);
     setTimeout(() => setAgregadoId(null), 1200);
   }
@@ -60,6 +68,7 @@ function FilaProductos({ formato }) {
         onScroll={alHacerScroll}
       >
         {items.map((item) => {
+          // Se adaptan los datos de Discogs a lo que muestra la tarjeta.
           const { artista, album } = separarArtistaYAlbum(item.title);
           const imagen = item.cover_image || item.thumb || "";
           const anio = item.year || "s.f.";
@@ -84,6 +93,8 @@ function FilaProductos({ formato }) {
                   <button
                     className="btn-outline btn-agregar"
                     onClick={(e) => {
+                      // El botón está dentro de un <Link>: se evita que el clic
+                      // navegue al detalle del producto.
                       e.preventDefault();
                       e.stopPropagation();
                       alAgregar(
