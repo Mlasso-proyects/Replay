@@ -2,3 +2,7 @@ node_modules
 dist
 .env
 .env.local
+.env*
+# Archivos que NUNCA deben subirse a GitHub
+.vercel
+.env*.local

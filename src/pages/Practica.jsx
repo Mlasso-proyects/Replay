@@ -1,15 +1,31 @@
 import { useEffect, useState } from "react";
 import FormularioLanzamiento from "../components/FormularioLanzamiento.jsx";
+import { PanelIA } from "../components/PanelIA";
 
 // Página de práctica de los Temas 3 y 4: formulario controlado, lista de
 // lanzamientos y consumo de una API externa (Fake Store API).
 function Practica() {
   // Tema 4: estado de la lista con datos iniciales de la tienda.
   const [lanzamientos, setLanzamientos] = useState([
-    { id: 1, album: "Abbey Road", artista: "The Beatles", estado: "Disponible" },
+    {
+      id: 1,
+      album: "Abbey Road",
+      artista: "The Beatles",
+      estado: "Disponible",
+    },
     { id: 2, album: "Rumours", artista: "Fleetwood Mac", estado: "Agotado" },
-    { id: 3, album: "Thriller", artista: "Michael Jackson", estado: "Disponible" },
-    { id: 4, album: "Random Access Memories", artista: "Daft Punk", estado: "Preventa" },
+    {
+      id: 3,
+      album: "Thriller",
+      artista: "Michael Jackson",
+      estado: "Disponible",
+    },
+    {
+      id: 4,
+      album: "Random Access Memories",
+      artista: "Daft Punk",
+      estado: "Preventa",
+    },
   ]);
 
   // Tema 4: estado de carga (true mientras se espera la respuesta de la API).
@@ -68,6 +84,25 @@ function Practica() {
     }
   }
 
+  const contar = (e) => lanzamientos.filter((l) => l.estado === e).length;
+  const indicadores = [
+    {
+      metric: "Discos disponibles",
+      value: contar("Disponible"),
+      status: "normal",
+    },
+    {
+      metric: "Discos agotados",
+      value: contar("Agotado"),
+      status: contar("Agotado") > 0 ? "crítico" : "normal",
+    },
+    {
+      metric: "Discos en preventa",
+      value: contar("Preventa"),
+      status: "requiere atención",
+    },
+  ];
+
   return (
     <main className="page">
       <section className="page-hero">
@@ -83,7 +118,9 @@ function Practica() {
         >
           <div>
             <h1>LANZAMIENTOS REPLAY</h1>
-            <p className="lede">Registro de vinilos y cassettes de la tienda.</p>
+            <p className="lede">
+              Registro de vinilos y cassettes de la tienda.
+            </p>
           </div>
           {/* Tema 4: evento onClick; el botón se deshabilita mientras carga */}
           <button
@@ -115,6 +152,7 @@ function Practica() {
 
         {/* Tema 3: se pasa la función agregarLanzamiento como prop al formulario */}
         <FormularioLanzamiento onAgregarLanzamiento={agregarLanzamiento} />
+        <PanelIA indicadores={indicadores} />
 
         <p className="section-tab" style={{ marginTop: "32px" }}>
           Lanzamientos registrados: {lanzamientos.length}

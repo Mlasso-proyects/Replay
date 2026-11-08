@@ -35,6 +35,9 @@ function Header() {
           <Link to="/nosotros" onClick={() => setMenuAbierto(false)}>
             Nosotros
           </Link>
+          <Link to="/practica" onClick={() => setMenuAbierto(false)}>
+            Lanzamientos
+          </Link>
         </nav>
 
         <div className="header-actions">
